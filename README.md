@@ -47,9 +47,10 @@ In the code, locate where the MongoDB URI is set (in db.js or wherever you're co
 Run the following command to start the server: npm start
 
 API Endpoints:
+
   1.Create a New To-Do Note
-    Endpoint: POST /api/notes
-    Description: Create a new to-do note.
+    -Endpoint: POST /api/notes
+    -Description: Create a new to-do note.
      
     Request Body:
     {
@@ -72,8 +73,9 @@ API Endpoints:
             }
 
   2.Get All To-Do Notes
-    Endpoint: GET /api/notes
-    Description: Retrieve all to-do notes.
+    -Endpoint: GET /api/notes
+    -Description: Retrieve all to-do notes.
+
     Response:
         Success (200):
             [
@@ -87,8 +89,9 @@ API Endpoints:
             ]
 
   3.Update an Existing To-Do Note
-    Endpoint: PUT /api/notes/60d75d1f2c7e9e0b8cfa1a52
-    Description: Update the title and/or description of an existing to-do note.
+    -Endpoint: PUT /api/notes/60d75d1f2c7e9e0b8cfa1a52
+    -Description: Update the title and/or description of an existing to-do note.
+
     Request Body:
         {
             "title": "Officebanao Gurgaon",
@@ -112,10 +115,11 @@ API Endpoints:
   4.Delete a To-Do Note
     Endpoint: DELETE /api/notes/:id
     Description: Delete a specific to-do note by its ID.
+
     Response:
         Success (200):
             {
-                "message": "Note deleted successfully."
+            "message": "Note deleted successfully."
             }
 
         Error (404):
