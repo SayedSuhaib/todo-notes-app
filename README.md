@@ -47,90 +47,80 @@ In the code, locate where the MongoDB URI is set (in db.js or wherever you're co
 Run the following command to start the server: npm start
 
 API Endpoints:
-  1. Create a New To-Do Note
-     Endpoint: POST /api/notes
-     Description: Create a new to-do note.
+  1.Create a New To-Do Note
+    Endpoint: POST /api/notes
+    Description: Create a new to-do note.
      
-     Request Body:
-     {
-      "title": "Officebanao",
-      "description": "creating, maintaining and managing offices with technology, organizing the industry, creating standards and processes and driving           
-       transparency."
-      }
+    Request Body:
+    {
+        "title": "Officebanao",
+        "description": "creating, maintaining and managing offices with technology, organizing the industry, creating standards and processes and driving transparency."
+    }
 
-     Response:
-       Success (201):
-       {
-        "message": "Note created successfully.",
-        "note": {
-          "_id": "60d75d1f2c7e9e0b8cfa1a52",
-           "title": "Officebanao",
-           "description": "creating, maintaining and managing offices with technology, organizing the industry, creating standards and processes and driving      
-           transparency."
-          "createdAt": "2025-01-20T12:34:56.789Z",
-          "updatedAt": "2025-01-20T12:34:56.789Z"
-        }
-      }
 
-      Error (400):
-      {
-        "message": "Title is required."
-      }
+    Response:
+        Success (201):
+            {
+                "message": "Note created successfully",
+                "note": {
+                    "_id": "60d75d1f2c7e9e0b8cfa1a52",
+                    "title": "Officebanao",
+                    "description": "creating, maintaining and managing offices with technology, organizing the industry, creating standards and processes and driving transparency."
+                    "createdAt": "2025-01-20T12:34:56.789Z",
+                    "updatedAt": "2025-01-20T12:34:56.789Z"
+                }
+            }
 
-  2. Get All To-Do Notes
-     Endpoint: GET /api/notes
-     Description: Retrieve all to-do notes.
-     Response:
-     Success (200):
-
-     [
-     {
-          "_id": "60d75d1f2c7e9e0b8cfa1a52",
-           "title": "Officebanao",
-           "description": "creating, maintaining and managing offices with technology, organizing the industry, creating standards and processes and driving      
-           transparency."
-          "createdAt": "2025-01-20T12:34:56.789Z",
-          "updatedAt": "2025-01-20T12:34:56.789Z"
-        },
-     
-     ]
-
-  3. Update an Existing To-Do Note
-     Endpoint: PUT /api/notes/60d75d1f2c7e9e0b8cfa1a52
-     Description: Update the title and/or description of an existing to-do note.
-     Request Body:
-     {
-      "title": "Officebanao Gurgaon",
-      "description": "creating, maintaining and managing offices with technology, organizing the industry, creating standards and processes and driving      
-       transparency."
-     }
-
-     Response:
-      Success (200):
-      {
-       "message": "Note updated successfully.",
-       "note": {
-         "_id": "60d75d1f2c7e9e0b8cfa1a52",
-         "title": "Officebanao Gurgaon",
-         "description": "creating, maintaining and managing offices with technology, organizing the industry, creating standards and processes and driving      
-          transparency.",
-         "createdAt": "2025-01-20T12:34:56.789Z",
-         "updatedAt": "2025-01-20T13:00:00.000Z"
-        }
-      }
-
-  4. Delete a To-Do Note
-     Endpoint: DELETE /api/notes/:id
-     Description: Delete a specific to-do note by its ID.
-     Response:
+  2.Get All To-Do Notes
+    Endpoint: GET /api/notes
+    Description: Retrieve all to-do notes.
+    Response:
         Success (200):
+            [
+                {
+                    "_id": "60d75d1f2c7e9e0b8cfa1a52",
+                    "title": "Officebanao",
+                    "description": "creating, maintaining and managing offices with technology, organizing the industry, creating standards and processes and driving transparency."
+                    "createdAt": "2025-01-20T12:34:56.789Z",
+                    "updatedAt": "2025-01-20T12:34:56.789Z"
+                },
+            ]
+
+  3.Update an Existing To-Do Note
+    Endpoint: PUT /api/notes/60d75d1f2c7e9e0b8cfa1a52
+    Description: Update the title and/or description of an existing to-do note.
+    Request Body:
         {
-          "message": "Note deleted successfully."
+            "title": "Officebanao Gurgaon",
+            "description": "5th floor, plot no 57, sector 18, Gurgaon, Haryana 122015"
         }
+ 
+
+        Response:
+            Success (200):
+                {
+                    "message": "Note updated successfully.",
+                    "note": {
+                        "_id": "60d75d1f2c7e9e0b8cfa1a52",
+                        "title": "Officebanao Gurgaon",
+                        "description": "5th floor, plot no 57, sector 18, Gurgaon, Haryana 122015",
+                        "createdAt": "2025-01-20T12:34:56.789Z",
+                        "updatedAt": "2025-01-20T13:00:00.000Z"
+                    }
+                }
+
+  4.Delete a To-Do Note
+    Endpoint: DELETE /api/notes/:id
+    Description: Delete a specific to-do note by its ID.
+    Response:
+        Success (200):
+            {
+                "message": "Note deleted successfully."
+            }
 
         Error (404):
-        {
-          "message": "Note not found."
-        }
+            {
+            "message": "Note not found."
+            }
 
 This project is licensed under the MIT License - see the LICENSE file for details.
